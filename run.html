@@ -23,14 +23,14 @@ function FP_getObjectByID(id,o) {//v1.0
  if(o.id==id || o.name==id) return o; if(o.childNodes) c=o.childNodes; if(c)
  for(n=0; n<c.length; n++) { el=FP_getObjectByID(id,c[n]); if(el) return el; }
  f=o.forms; if(f) for(n=0; n<f.length; n++) { els=f[n].elements;
- for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[n]); if(el) return el; } }
+ for(m=0; m<els.length; m++){ el=FP_getObjectByID(id,els[m]); if(el) return el; } }
  return null;
 }
 // -->
 </script>
 </head>
 
-<body onload="FP_preloadImgs(/*url*/'button9.jpg',/*url*/'button8.jpg',/*url*/'button1F1.jpg',/*url*/'button1E1.jpg',/*url*/'buttonF.jpg',/*url*/'buttonE.jpg',/*url*/'button15.jpg',/*url*/'button14.jpg',/*url*/'button10.jpg',/*url*/'button11.jpg',/*url*/'button1F.jpg',/*url*/'button1E.jpg')" background="https://thegamesystems.github.io/OKids/defwe8b-40e16264-c2dc-4d61-9d41-abbc98516497.png">
+<body onload="FP_preloadImgs('button9.jpg','button8.jpg','button1F1.jpg','button1E1.jpg','buttonF.jpg','buttonE.jpg','button15.jpg','button14.jpg','button10.jpg','button11.jpg','button1F.jpg','button1E.jpg')" background="https://thegamesystems.github.io/OKids/defwe8b-40e16264-c2dc-4d61-9d41-abbc98516497.png">
 
 <!-- Navigation -->
 <p align="left">
@@ -53,11 +53,12 @@ function FP_getObjectByID(id,o) {//v1.0
   </a>
 </p>
 
+<!-- Title stays OUTSIDE the embed -->
 <p align="center"><font size="6"><b>Run</b></font></p>
 
-<!-- Centered Game Container -->
-<div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
-  <div id="ruffle" class="gameloc"></div>
+<!-- Game container -->
+<div style="display: flex; justify-content: center; align-items: center;">
+  <div id="ruffle"></div>
 </div>
 
 <!-- JS for Ruffle + SWF -->
